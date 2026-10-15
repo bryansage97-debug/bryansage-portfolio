@@ -3,7 +3,7 @@ backend:
   repo: bryansage97-debug/bryansage-portfolio
   branch: main
   base_url: https://bryansage.org
-  auth_endpoint: api/auth
+  auth_endpoint: api/auth/callback/github
 
 media_folder: "current website/images"
 public_folder: "/images"
