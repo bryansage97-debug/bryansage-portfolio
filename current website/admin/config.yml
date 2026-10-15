@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: bryansage97-debug/bryansage-portfolio
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "homepage"
+        label: "Homepage"
+        file: "cms/homepage.json"
+        fields:
+          - { label: "Description", name: "description", widget: "text" }
+
+  - name: "work"
+    label: "Work — Projects"
+    folder: "cms/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Number", name: "number", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Embed URL", name: "embed_url", widget: "string" }
+      - { label: "Embed Type", name: "embed_type", widget: "select", options: ["16:9", "9:16 vertical"] }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "cms/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "about"
+    label: "About"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "cms/about.json"
+        fields:
+          - { label: "Bio Paragraph 1", name: "bio1", widget: "text" }
+          - { label: "Bio Paragraph 2", name: "bio2", widget: "text" }
+          - { label: "Bio Paragraph 3", name: "bio3", widget: "text" }
