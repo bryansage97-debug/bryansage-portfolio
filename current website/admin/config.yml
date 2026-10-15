@@ -1,10 +1,7 @@
 backend:
-  name: github
-  repo: bryansage97-debug/bryansage-portfolio
+  name: git-gateway
   branch: main
-  base_url: https://bryansage.org
-  auth_endpoint: api/auth/callback/github
-
+  
 media_folder: "current website/images"
 public_folder: "/images"
 
