@@ -176,6 +176,16 @@
       flex-direction: column;
       justify-content: flex-end;
     }
+    /* animated BS mark — floats in the open space above the name */
+    .masthead-mark {
+      display: block;
+      width: clamp(240px, 30vw, 440px);
+      height: auto;
+      margin: auto;                 /* centres it in the space above the eyebrow */
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
     .masthead-eyebrow {
       font-family: var(--mono);
       font-size: 10px;
@@ -755,6 +765,7 @@
       .masthead { grid-template-columns: 1fr; }
       .masthead-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 48px 18px 36px; }
       .masthead-right { padding: 36px 18px 48px; }
+      .masthead-mark { width: min(78%, 340px); margin: 0 auto 28px; }
       .about-grid { grid-template-columns: 1fr; }
       .about-col:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
       .about-col { padding: 36px 18px; }
@@ -807,6 +818,7 @@
 
   <div class="masthead rv">
     <div class="masthead-left">
+      <img class="masthead-mark" src="bs-logo-spin.gif" alt="Bryan Sage logo" width="804" height="528" draggable="false" />
       <p class="masthead-eyebrow">Portfolio — Selected Work</p>
       <h1>Bryan<br>Sage</h1>
     </div>
