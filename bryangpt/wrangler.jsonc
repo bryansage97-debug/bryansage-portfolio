@@ -1,0 +1,29 @@
+{
+  // BryanGPT — private visitor chats, emailed to Bryan, answered by replying in Gmail.
+  "name": "bryangpt",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+
+  // Sends each new visitor message to your inbox (free: it's your own verified address)
+  "send_email": [
+    { "name": "EMAIL", "destination_address": "bryansage97@gmail.com" }
+  ],
+
+  // One private, strongly-consistent store per visitor chat (free on the Workers Free plan)
+  "durable_objects": {
+    "bindings": [
+      { "name": "THREADS", "class_name": "Thread" },
+      { "name": "LIMITS", "class_name": "Limits" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["Thread", "Limits"] }
+  ],
+
+  "vars": {
+    "OWNER_EMAIL": "bryansage97@gmail.com",
+    "FROM_EMAIL": "bryangpt@bryansage.org",
+    "ALLOWED_ORIGINS": "https://bryansage.org,https://www.bryansage.org,https://bryansage-site.pages.dev"
+  }
+}
